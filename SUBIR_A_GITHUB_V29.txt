@@ -1,0 +1,14 @@
+V29 · actualización limpa
+
+Esta versión NON contén o botón “Ver introdución”.
+
+Para evitar que GitHub Pages ou a PWA mostren unha versión vella:
+1. Substitúe index.html e sw.js no repositorio.
+2. Sube tamén o resto dos ficheiros desta carpeta.
+3. Fai Commit.
+4. Agarda a que GitHub Pages remate o deployment.
+5. A V29 usa un novo cache (tecendo-nos-v29) e elimina os caches anteriores.
+
+Comprobación:
+No código fonte da páxina publicada debe aparecer:
+<meta name="app-version" content="V29" />
