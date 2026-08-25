@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="gl">
 <head>
-  <meta name="app-version" content="V35" />
+  <meta name="app-version" content="V36" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tecendo Nós · App do PDI</title>
@@ -2394,6 +2394,87 @@ img,video,iframe{max-width:100%}
   .projectVideoStage{border-radius:10px!important}
 }
 
+
+/* V36 · Google Drive player en iPhone: caixa e controis completos */
+.projectVideoBlock{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+  overflow:visible!important;
+}
+
+.projectVideoStage{
+  position:relative!important;
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  height:auto!important;
+  aspect-ratio:16 / 10!important; /* Drive precisa algo máis de alto para a súa UI */
+  padding:0!important;
+  margin:0!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+  border:0!important;
+  outline:0!important;
+  border-radius:14px!important;
+  background:#000!important;
+}
+
+.projectVideoStage iframe{
+  position:absolute!important;
+  top:0!important;
+  left:0!important;
+  right:auto!important;
+  bottom:auto!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  box-sizing:border-box!important;
+  transform:none!important;
+}
+
+.projectVideoStage video{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  object-fit:contain!important;
+  background:#000!important;
+}
+
+@media(max-width:780px){
+  .projectVideoBlock{
+    padding:8px!important;
+  }
+  .projectVideoStage{
+    width:100%!important;
+    aspect-ratio:16 / 10!important;
+    border-radius:12px!important;
+  }
+}
+
+@media(max-width:430px){
+  .projectVideoBlock{padding:6px!important}
+  .projectVideoStage{
+    /* máis alto no iPhone para que a barra de Drive non tape o vídeo */
+    aspect-ratio:4 / 3!important;
+    border-radius:10px!important;
+  }
+}
+
 </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -3317,7 +3398,7 @@ if(introShell) window.addEventListener('resize',updateIntro);
 document.body.classList.remove('intro-open');
 
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js?v=35').then(reg=>reg.update()).catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=36').then(reg=>reg.update()).catch(()=>{});
 }
 migratePresentationV4();migrateBooksV5();migrateV6();seedBalbordo29();seedBooksInitialV61();seedBooksV62();seedBookPuntoAranaV63();seedProjectVideoV71();initNav();render();initSupabaseShared();
 
