@@ -1719,74 +1719,27 @@ img,video,iframe{max-width:100%}
 .loginHelp{color:#675f4e;margin-top:-3px}
 @media(max-width:780px){.syncStatus{font-size:9px;padding:5px 7px}}
 
+
+/* V27 · menú móbil máis pequeno e compacto */
+@media(max-width:900px){
+ .side.mobileOpen{width:min(550px,calc(100vw - 30px))!important;padding:11px 11px 13px!important;border-radius:18px!important}
+ .side.mobileOpen:before{margin-bottom:4px!important;font-size:9px!important;line-height:1!important}
+ .side.mobileOpen .nav{width:min(500px,100%)!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:3px 6px!important}
+ .side.mobileOpen .nav button{width:100%!important;margin:0!important;aspect-ratio:760/280!important}
+}
+@media(max-width:520px){
+ .side.mobileOpen{top:98px!important;width:calc(100vw - 26px)!important;max-height:calc(100vh - 110px)!important;padding:8px 9px 10px!important;border-radius:16px!important}
+ .side.mobileOpen:after{inset:5px!important;border-radius:12px!important}
+ .side.mobileOpen .nav{grid-template-columns:repeat(2,minmax(0,1fr))!important;width:100%!important;gap:2px 4px!important}
+ .side.mobileOpen .nav button{width:100%!important;margin:0!important;aspect-ratio:760/280!important}
+}
+
 </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
-<section class="intro-shell" id="introShell" aria-label="Introdución interactiva a Tecendo Nós">
-  <button class="intro-skip" onclick="enterApp()">Saltar introdución ↓</button>
-  <div class="intro-wrap" id="introWrap">
-    <div class="intro-stage">
-      <svg class="intro-thread" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
-        <path id="introThreadPath" d="M -80 760 C 210 700 180 410 470 450 S 720 735 920 555 S 1180 260 1690 340"/>
-      </svg>
-
-      <article class="intro-scene active" data-scene="0">
-        <img class="intro-bg" src="assets/intro_macro_agulla.png" alt="">
-        <div class="intro-copy">
-          <span class="intro-kicker">O primeiro fío</span>
-          <h1 class="intro-title">Antes de existir un tecido…</h1>
-          <p>…houbo unha primeira puntada. Desprazándote, o fío irá descubrindo todo o que nos une.</p>
-        </div>
-      </article>
-
-      <article class="intro-scene" data-scene="1">
-        <img class="intro-bg" src="assets/intro_fio.png" alt="">
-        <div class="intro-copy">
-          <span class="intro-kicker">Un fío que pregunta</span>
-          <h2 class="intro-title">Aprender é seguir o camiño.</h2>
-          <p>Observar, medir, escoitar, ler, crear, investigar e compartir non son pezas separadas: forman parte da mesma experiencia.</p>
-        </div>
-      </article>
-
-      <article class="intro-scene" data-scene="2">
-        <img class="intro-bg contain" src="assets/logo_oficial.png" alt="Contorno oficial de San Pedro de Nós">
-        <div class="intro-copy">
-          <span class="intro-kicker">A palabra que nos dá nome</span>
-          <h2 class="intro-title">Tres xeitos de dicir Nós.</h2>
-          <div class="intro-three">
-            <div class="intro-chip"><b>1 · Nós</b><span>San Pedro de Nós: territorio, camiños, natureza, ciencia e matemáticas.</span></div>
-            <div class="intro-chip"><b>2 · Nós</b><span>Lazos: memoria, lingua, Neira Vilas, tradicións e conexións entre tempos.</span></div>
-            <div class="intro-chip"><b>3 · Nós</b><span>Nosoutros/as: escola, familias, comunidade e creación compartida.</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="intro-scene" data-scene="3">
-        <img class="intro-bg" src="assets/mapa_vivo_final.png" alt="Tapiz bordado de San Pedro de Nós">
-        <div class="intro-copy">
-          <span class="intro-kicker">Currículo integrado</span>
-          <h2 class="intro-title">Cada saber achega un fío.</h2>
-          <p>O PDI non é unha actividade á parte. É o contexto común no que Infantil e Primaria desenvolven o currículo desde todas as áreas e ámbitos.</p>
-        </div>
-      </article>
-
-      <article class="intro-scene intro-final" data-scene="4">
-        <img class="intro-bg" src="assets/mapa_vivo_final.png" alt="">
-        <div class="intro-copy">
-          <span class="intro-kicker">Benvidas e benvidos ao Tear</span>
-          <h2 class="intro-title">Aprender tamén é tecer.</h2>
-          <p>Aquí atoparás o proxecto, ideas, recursos, posibles produtos, a memoria compartida e o calendario xeral.</p>
-          <button class="intro-enter" onclick="enterApp()">Entrar na app →</button>
-        </div>
-      </article>
-      <div class="intro-progress"><i id="introProgressBar"></i></div>
-    </div>
-  </div>
-</section>
-
-<div class="embroideryFrame"><div class="app" id="app">
+<div class="app" id="app">
   <aside class="side">
     <div class="brand"><img src="assets/logo-tecendo-nos.png" alt="Tecendo Nós"><div><h1>Tecendo<br>Nós</h1><p>O tear do PDI</p></div></div>
     <nav class="nav" id="nav"></nav>
@@ -1804,7 +1757,7 @@ img,video,iframe{max-width:100%}
   <div class="sceneYarn"><span></span></div>
 </div>
 
-    <div class="topbar"><div class="search"><input id="search" placeholder="Buscar por curso, área, Neira Vilas, memoria, música, mapas..."></div><button class="replayIntro" onclick="replayIntro()">Ver introdución</button><button id="mobileMenuBtn" class="mobileMenuBtn" type="button" aria-expanded="false" aria-controls="nav" onclick="toggleMobileMenu()">☰ Menú</button><span id="syncStatus" class="syncStatus">Conectando…</span><button class="adminBtn pageEdit" onclick="openPageEditor()">Editar páxina</button><button class="adminBtn" onclick="toggleAdmin()" id="adminBtn">Administración</button></div>
+    <div class="topbar"><div class="search"><input id="search" placeholder="Buscar por curso, área, Neira Vilas, memoria, música, mapas..."></div><button id="mobileMenuBtn" class="mobileMenuBtn" type="button" aria-expanded="false" aria-controls="nav" onclick="toggleMobileMenu()">☰ Menú</button><span id="syncStatus" class="syncStatus">Conectando…</span><button class="adminBtn pageEdit" onclick="openPageEditor()">Editar páxina</button><button class="adminBtn" onclick="toggleAdmin()" id="adminBtn">Administración</button></div>
 
     <section class="section" id="inicio"><div class="sectionEmbroidery teal"><span>✿</span><i></i><b>♥</b><i></i><span>✿</span></div>
       <div class="hero"><div><h2>Tecendo Nós</h2><p>Un espazo común para organizar, inspirar e documentar o PDI 2026-2027 desde o territorio, a memoria, a literatura e a comunidade.</p><div class="actions"><button class="primary" onclick="show('pdi')">Coñecer o PDI</button><button class="secondary" onclick="openForm('idea')">Teño unha idea</button><button class="secondary" onclick="openForm('memoria')">Documentar actividade</button></div></div><img src="assets/logo-tecendo-nos.png" alt="Logo Tecendo Nós"></div>
@@ -1827,12 +1780,13 @@ img,video,iframe{max-width:100%}
 
     <section class="section active" id="pdi"><div class="sectionEmbroidery teal"><span>✿</span><i></i><b>♥</b><i></i><span>✿</span></div><div class="sectionHead"><div><h2>O proxecto</h2><p>Unha presentación breve para entender Tecendo Nós e atopar rapidamente un lugar desde o que participar.</p></div></div>
 <div class="projectReminder"><span class="reminderStitch">✦</span><div><strong>Lembra!</strong><p><b>Non desveles o título nin a temática do proxecto antes da actividade inicial.</b> Podes introducir elementos, pistas, unha historia, misterio ou todo o que queiras para espertar a curiosidade, pero deixa que sexa o alumnado quen descubra <em>Tecendo Nós</em>.</p></div></div>
+
+
 <div class="pdiLead">
   <h3>Tecendo Nós · 2026/2027</h3>
   <p>Un proxecto común para Infantil e Primaria no que territorio, memoria, literatura, ciencia, matemáticas, arte, movemento, lingua e comunidade poden formar parte do mesmo tecido. A idea non é engadir “outra actividade”: é empregar o PDI como contexto para aprendizaxes curriculares con sentido.</p>
   <div class="pdiRibbon"><span>San Pedro de Nós</span><span>Neira Vilas</span><span>Currículo integrado</span><span>Fíos e tecidos</span><span>Comunidade</span></div>
-</div><div class="grid two"><div class="card"><h3>Que é?</h3><p>Un Proxecto Documental Integrado de centro: biblioteca, aulas, áreas e comunidade traballan arredor dun contexto común de investigación, creación e comunicación.</p></div><div class="card"><h3>Tres Nós</h3><p><b>Territorio:</b> San Pedro de Nós e Finca Tenreiro.<br><b>Lazos:</b> memoria, oficios, xogos, tempos.<br><b>Comunidade:</b> aprender, coidar e devolver.</p></div><div class="card"><h3>Neira Vilas</h3><p>Fío literario transversal: infancia, escola, lingua, cartas, xogos, familia, comunidade e memoria.</p><div class="tagrow"><span class="tag">lingua</span><span class="tag blue">infancia</span><span class="tag rose">memoria</span></div></div><div class="card"><h3>Metodoloxía</h3><p>Observamos → Preguntamos → Investigamos → Creamos → Compartimos → Reflexionamos.</p></div></div><div class="panel"><img class="wideImage" src="assets/pdi-tecendo-nos.png" alt="Infografía Tecendo Nós"></div>
-
+</div>
 <div class="projectVideoBlock">
   <div class="projectVideoHead">
     <div>
@@ -1844,6 +1798,8 @@ img,video,iframe{max-width:100%}
   </div>
   <div class="projectVideoStage" id="projectVideoStage"></div>
 </div>
+<div class="grid two"><div class="card"><h3>Que é?</h3><p>Un Proxecto Documental Integrado de centro: biblioteca, aulas, áreas e comunidade traballan arredor dun contexto común de investigación, creación e comunicación.</p></div><div class="card"><h3>Tres Nós</h3><p><b>Territorio:</b> San Pedro de Nós e Finca Tenreiro.<br><b>Lazos:</b> memoria, oficios, xogos, tempos.<br><b>Comunidade:</b> aprender, coidar e devolver.</p></div><div class="card"><h3>Neira Vilas</h3><p>Fío literario transversal: infancia, escola, lingua, cartas, xogos, familia, comunidade e memoria.</p><div class="tagrow"><span class="tag">lingua</span><span class="tag blue">infancia</span><span class="tag rose">memoria</span></div></div><div class="card"><h3>Metodoloxía</h3><p>Observamos → Preguntamos → Investigamos → Creamos → Compartimos → Reflexionamos.</p></div></div><div class="panel"><img class="wideImage" src="assets/pdi-tecendo-nos.png" alt="Infografía Tecendo Nós"></div>
+
 <div class="pdiClosing">
   <strong>Non temos que facer todos o mesmo.</strong>
   <span>Temos que conseguir que cada achega —un mapa, unha medición, unha historia, un bordado, unha canción ou unha investigación— forme parte do mesmo tecido.</span>
@@ -2678,19 +2634,15 @@ function enterApp(){
   document.body.classList.remove('intro-open');
 }
 function replayIntro(){
+  if(!introShell)return;
   introShell.style.display='block';
   document.body.classList.add('intro-open');
   window.scrollTo({top:0,behavior:'instant'});
   requestAnimationFrame(updateIntro);
 }
-window.addEventListener('scroll',updateIntro,{passive:true});
-window.addEventListener('resize',updateIntro);
-if(localStorage.tecendonosIntroSeen==='1'){
-  introShell.style.display='none';
-}else{
-  document.body.classList.add('intro-open');
-  updateIntro();
-}
+if(introShell) window.addEventListener('scroll',updateIntro,{passive:true});
+if(introShell) window.addEventListener('resize',updateIntro);
+document.body.classList.remove('intro-open');
 
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}
 migratePresentationV4();migrateBooksV5();migrateV6();seedBalbordo29();seedBooksInitialV61();seedBooksV62();seedBookPuntoAranaV63();seedProjectVideoV71();initNav();render();initSupabaseShared();
