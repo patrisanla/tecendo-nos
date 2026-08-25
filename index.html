@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="gl">
 <head>
-  <meta name="app-version" content="V29" />
+  <meta name="app-version" content="V30" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tecendo Nós · App do PDI</title>
@@ -1735,6 +1735,130 @@ img,video,iframe{max-width:100%}
  .side.mobileOpen .nav button{width:100%!important;margin:0!important;aspect-ratio:760/280!important}
 }
 
+
+/* ==============================================================
+   V30 · MENÚ MÓBIL REDESEÑADO
+   Panel compacto tipo bastidor, 6 accesos sempre visibles.
+   ============================================================== */
+@media(max-width:900px){
+  .side.mobileOpen{
+    position:fixed!important;
+    z-index:9999!important;
+    top:84px!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
+    width:min(620px,calc(100vw - 22px))!important;
+    height:auto!important;
+    max-height:calc(100dvh - 98px)!important;
+    overflow:auto!important;
+    padding:12px!important;
+    margin:0!important;
+    border-radius:22px!important;
+    background:rgba(247,235,201,.94)!important;
+    backdrop-filter:blur(13px) saturate(.92)!important;
+    -webkit-backdrop-filter:blur(13px) saturate(.92)!important;
+    box-shadow:0 16px 42px rgba(63,47,24,.24)!important;
+  }
+  .side.mobileOpen:after{
+    content:""!important;
+    position:absolute!important;
+    inset:6px!important;
+    pointer-events:none!important;
+    border:2px dashed rgba(122,89,53,.32)!important;
+    border-radius:17px!important;
+  }
+  .side.mobileOpen:before{
+    content:"Escolle un apartado"!important;
+    display:block!important;
+    position:relative!important;
+    z-index:2!important;
+    margin:1px 0 8px!important;
+    text-align:center!important;
+    font-size:12px!important;
+    font-weight:900!important;
+    letter-spacing:.04em!important;
+    color:#6a4a70!important;
+  }
+
+  /* Só navegación no despregable: o resto segue dispoñible na cabeceira/páxina */
+  .side.mobileOpen .sideTop,
+  .side.mobileOpen .sideSearch,
+  .side.mobileOpen .searchBox,
+  .side.mobileOpen .sidebarSearch,
+  .side.mobileOpen .sideQuote,
+  .side.mobileOpen .syncStatus,
+  .side.mobileOpen .adminBtn,
+  .side.mobileOpen > .adminBtn{
+    display:none!important;
+  }
+
+  .side.mobileOpen .nav{
+    position:relative!important;
+    z-index:3!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:7px 9px!important;
+    width:100%!important;
+    max-width:none!important;
+    padding:0!important;
+    margin:0!important;
+  }
+  .side.mobileOpen .nav button{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    aspect-ratio:auto!important;
+    overflow:visible!important;
+  }
+  .side.mobileOpen .nav button img,
+  .side.mobileOpen .nav button .menuPng{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    max-height:88px!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    margin:0 auto!important;
+    filter:drop-shadow(0 3px 4px rgba(72,51,24,.10))!important;
+  }
+}
+
+@media(max-width:520px){
+  .side.mobileOpen{
+    top:78px!important;
+    width:calc(100vw - 18px)!important;
+    max-height:calc(100dvh - 90px)!important;
+    padding:10px 9px 11px!important;
+    border-radius:18px!important;
+  }
+  .side.mobileOpen:after{inset:5px!important;border-radius:14px!important}
+  .side.mobileOpen:before{
+    font-size:11px!important;
+    margin-bottom:6px!important;
+  }
+  .side.mobileOpen .nav{
+    gap:5px 6px!important;
+  }
+  .side.mobileOpen .nav button img,
+  .side.mobileOpen .nav button .menuPng{
+    max-height:76px!important;
+  }
+}
+
+/* iPhones moi estreitos: segue en 2 columnas pero reduce lixeiramente */
+@media(max-width:380px){
+  .side.mobileOpen .nav{gap:4px!important}
+  .side.mobileOpen .nav button img,
+  .side.mobileOpen .nav button .menuPng{max-height:68px!important}
+}
+
 </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -2646,7 +2770,7 @@ if(introShell) window.addEventListener('resize',updateIntro);
 document.body.classList.remove('intro-open');
 
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js?v=29').then(reg=>reg.update()).catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=30').then(reg=>reg.update()).catch(()=>{});
 }
 migratePresentationV4();migrateBooksV5();migrateV6();seedBalbordo29();seedBooksInitialV61();seedBooksV62();seedBookPuntoAranaV63();seedProjectVideoV71();initNav();render();initSupabaseShared();
 
