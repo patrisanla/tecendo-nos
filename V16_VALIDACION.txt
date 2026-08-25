@@ -1,0 +1,8 @@
+{
+  "base": "V15",
+  "PNGs integrados": 12,
+  "botóns PNG": 6,
+  "cabeceiras PNG": 6,
+  "JavaScript": "OK",
+  "contido e funcións principais": "OK"
+}

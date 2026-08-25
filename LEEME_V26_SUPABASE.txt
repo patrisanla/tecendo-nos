@@ -1,0 +1,15 @@
+TECENDO NÓS · V26 · SUPABASE COMPARTIDO
+
+1. Abre a app con conexión a internet.
+2. Preme Administración.
+3. Inicia sesión coa conta que creaches en Supabase.
+4. Como a base está baleira, a app preguntará se queres migrar TODO o contido actual.
+5. Preme Aceptar unha única vez.
+6. Cando vexas “Gardado para todos”, abre a app noutro navegador/dispositivo:
+   debe cargar o mesmo contido.
+7. Sen iniciar sesión, calquera persoa pode engadir Ideas e Memoria viva.
+8. En Administración podes editar/borrar/reordenar e os cambios gardaranse en Supabase.
+9. Realtime está activado: os outros dispositivos recargan os datos automaticamente cando hai cambios.
+
+NOTA
+A Publishable Key é pública e está deseñada para frontend. Non inclúe ningunha secret/service_role key.

@@ -1,0 +1,9 @@
+{
+  "base": "V12 contido completo / V7.3 preservada",
+  "html_before": 114805,
+  "html_after": 134459,
+  "sections": 8,
+  "required_content": "OK",
+  "javascript": "OK",
+  "visual_skin": "V13 bordado real total"
+}

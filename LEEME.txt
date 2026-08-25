@@ -1,0 +1,20 @@
+O TEAR · TECENDO NÓS
+Prototipo navegable da app interna do PDI 2026-2027
+
+COMO ABRIR
+1. Descomprime o cartafol.
+2. Abre index.html nun navegador moderno.
+3. Para instalar como PWA e gardar datos de maneira máis fiable, publícaa nun servidor web (GitHub Pages, Netlify, Vercel ou servidor do centro).
+
+ADMINISTRACIÓN
+PIN: 2027
+Desde o modo administración podes editar os textos das páxinas, o calendario e todas as publicacións.
+
+INTRODUCIÓN
+A portada incorpora unha experiencia narrativa por desprazamento:
+- agulla e primeiro fío;
+- as tres dimensións de Nós;
+- integración curricular;
+- mapa vivo de San Pedro de Nós.
+
+Os datos introducidos neste prototipo gárdanse no localStorage do navegador. Para uso real compartido entre docentes necesitará conectarse a unha base de datos (por exemplo, Supabase ou Firebase).

@@ -1,0 +1,12 @@
+O TEAR · V6.8
+
+Calendario reconstruído desde a V6.3 limpa.
+
+IMPORTANTE:
+- Xa NON hai un botón pequeno Editar que poida fallar.
+- En modo Administración, TODO o epígrafe do calendario é o botón de edición.
+- Verás «✎ Editar» visualmente á dereita, pero só tes que tocar/clicar en calquera parte do epígrafe.
+- Ábrese o formulario para engadir Información ampliada e/ou ligazón.
+- Fóra de Administración, só os fitos con información ampliada son clicables e mostran «+ info».
+- O calendario existente consérvase.
+- O editor xeral do calendario foi reparado para non borrar a información ampliada xa creada.

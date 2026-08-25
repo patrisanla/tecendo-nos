@@ -1,0 +1,8 @@
+{
+  "V7.3 chars": 104475,
+  "V12 chars": 114805,
+  "Instagram refs": 1,
+  "sections": 8,
+  "JS validation": "OK",
+  "required content": "OK"
+}

@@ -1,0 +1,20 @@
+O TEAR · TECENDO NÓS · V5
+
+REDESENO
+- Interface máis visual, editorial e cálida, con bordado/tecido só como detalle.
+- Optimizada especialmente para móbil en vertical.
+- En móbil, o menú convértese nunha barra fixa inferior tipo app.
+- En PC mantense navegación lateral.
+- Tarxetas, espazos, tamaños de texto e formularios adaptativos.
+- O apartado O PROXECTO conserva todos os contidos completos da versión anterior.
+- O Balbordo conserva as 29 ligazóns incrustadas.
+- A introdución non reaparece ao cambiar de sección; só co botón “Ver introdución”.
+
+NOVA SECCIÓN: LIBROS
+- Botón “Libros” no menú e na portada.
+- Catro identificacións por cor: azul, vermello, verde e amarelo.
+- Non se indican ciclos na interface.
+- Comeza baleira para encher máis tarde.
+- En administración pódense engadir título, autor/a, cor, recomendación, portada e ligazón.
+
+PIN ADMINISTRACIÓN: 2027

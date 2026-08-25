@@ -1,0 +1,17 @@
+O TEAR · V6.2
+
+Engadidos:
+- Os petos de Loreto
+- Memorias dun neno labrego (Lectura fácil)
+- Cartas a Lelo
+
+Lenda:
+Azul = Prelectura
+Vermello = Primeiras lecturas
+Verde = Lectura autónoma
+Amarelo = Lectura experta
+Gris = Lectura adulta
+Branco = Consulta
+
+Administración:
+As fichas de libros poden reordenarse cos botóns ↑ ↓, ademais de editar e borrar.

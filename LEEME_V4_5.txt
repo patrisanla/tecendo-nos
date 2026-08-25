@@ -1,0 +1,16 @@
+O TEAR · V4.5
+
+Partindo exactamente da V4.1 CORRIXIDA enviada pola usuaria.
+
+ARRANXADO:
+- Os accesos rápidos da portada xa funcionan (usaban go(), función inexistente).
+- Toda a navegación usa show().
+- Cambiar de sección oculta definitivamente a introdución.
+- A introdución só reaparece co botón “Ver introdución”.
+- O PROXECTO leva aos 7 bloques completos xa creados: resumo, tres dimensións de Nós, tecer literal, obxectivos, metodoloxía, produtos e datas.
+- Engadidas as 29 ligazóns no Balbordo, incrustadas.
+- Reparados os formularios de publicación, que conservaban código dunha versión anterior.
+- Reparada Memoria viva e a exportación.
+- JavaScript validado con node --check.
+
+PIN administración: 2027

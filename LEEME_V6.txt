@@ -1,0 +1,24 @@
+O TEAR · V6
+
+MENÚ PRINCIPAL
+1. O proxecto
+2. Materiais
+3. Libros
+4. Ideas
+5. Memoria viva
+6. Calendario
+
+O PROXECTO
+Conserva todo o resumo completo, obxectivos, metodoloxía, produtos e datas. Engádese ao final un espazo para incorporar o vídeo inicial.
+
+LIBROS
+Pódese pegar unha ligazón e a app tenta recuperar automaticamente:
+- título
+- autoría
+- portada
+- breve sinopse
+Logo escolles a cor azul, vermella, verde ou amarela e podes editar todos os datos antes de gardar.
+
+IMPORTANTE: nunha app local, moitas webs bloquean a extracción automática por CORS. Nese caso a app mantén a ligazón e permite completar todo manualmente. Nunha versión publicada cun pequeno backend, esta función poderá facerse fiable.
+
+Mantéñense o Balbordo coas 29 ligazóns, Materiais, Memoria viva, Calendario, administración e a regra de que a introdución só reaparece ao premer «Ver introdución».

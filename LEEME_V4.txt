@@ -1,0 +1,26 @@
+O TEAR · TECENDO NÓS · V4
+
+NOVIDADE PRINCIPAL
+O apartado “O proxecto” incorpora agora unha presentación breve e editable con:
+1. Resumo inicial
+2. As tres dimensións de Nós
+3. A importancia de tecer tamén de forma literal
+4. Obxectivos
+5. Metodoloxía
+6. Posibles produtos
+7. Datas que tecen o curso
+
+A presentación insiste en:
+- integrar o PDI no currículo, non tratalo como unha actividade engadida;
+- incluír Infantil e Primaria e todas as áreas/ámbitos;
+- traballar con tecidos, fíos, las, nós, lazos, costura, bordado, gancho, medidas e padróns;
+- Nós = San Pedro de Nós / lazos / nosoutros-as;
+- Neira Vilas como fío literario do curso.
+
+EDICIÓN
+En modo Administración → O proxecto → Editar páxina pódense modificar todos os sete bloques da presentación.
+
+PIN DO PROTOTIPO
+2027
+
+Segue sendo unha versión local: para uso simultáneo de todo o claustro haberá que conectar a app a unha base de datos compartida.

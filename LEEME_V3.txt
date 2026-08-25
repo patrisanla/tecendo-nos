@@ -1,0 +1,23 @@
+O TEAR · TECENDO NÓS · V3
+
+Esta versión reorganiza a app para que sexa unha ferramenta diaria para o profesorado.
+
+APARTADOS PRINCIPAIS
+1. O proxecto
+2. Ideas
+3. Materiais
+4. Memoria viva
+5. Calendario
+
+NOVIDADES
+- Portada con accesos rápidos.
+- Presentación breve das tres dimensións de Nós e da integración curricular.
+- Ideas con ligazóns incrustables de YouTube, Vimeo e Instagram (se o servizo permite o embed).
+- Materiais con ligazóns a Drive, PDF, Canva, vídeo ou web.
+- Memoria viva cun formulario moi curto, estatísticas e exportación a TXT.
+- Mantense a estética editorial con detalles de liño, puntadas e fío.
+- Mantense o modo administración do prototipo.
+
+IMPORTANTE
+Esta é unha app local/prototipo: as achegas gárdanse no navegador mediante localStorage.
+Para que todo o claustro vexa e publique os mesmos datos desde dispositivos diferentes, a seguinte fase debe conectar a app cun backend compartido (Supabase/Firebase ou similar).
