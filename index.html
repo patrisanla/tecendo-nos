@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="gl">
 <head>
-  <meta name="app-version" content="V32" />
+  <meta name="app-version" content="V33" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tecendo Nós · App do PDI</title>
@@ -2160,6 +2160,77 @@ img,video,iframe{max-width:100%}
   .mobileMenuList img{max-height:48px}
 }
 
+
+/* V33 · vídeo do apartado O proxecto totalmente responsive */
+.projectVideoBlock{
+  width:100%!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+}
+
+.projectVideoStage{
+  position:relative!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  aspect-ratio:16 / 9!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+}
+
+.projectVideoStage iframe,
+.projectVideoStage video,
+.projectVideoStage embed,
+.projectVideoStage object{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  border:0!important;
+  object-fit:contain!important;
+}
+
+.projectVideoStage > div{
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+}
+
+/* Evita que URLs/contidos incrustados provoquen ancho extra */
+#pdi,.projectVideoBlock,.projectVideoStage{
+  min-width:0!important;
+}
+
+@media(max-width:780px){
+  .projectVideoBlock{
+    padding:12px!important;
+  }
+  .projectVideoStage{
+    aspect-ratio:16 / 9!important;
+    width:100%!important;
+    border-width:6px!important;
+  }
+  .projectVideoHead{
+    display:block!important;
+  }
+  .projectVideoHead .pill-btn{
+    margin-top:8px!important;
+  }
+}
+
+@media(max-width:430px){
+  .projectVideoBlock{
+    padding:9px!important;
+  }
+  .projectVideoStage{
+    border-width:4px!important;
+  }
+}
+
 </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -3083,7 +3154,7 @@ if(introShell) window.addEventListener('resize',updateIntro);
 document.body.classList.remove('intro-open');
 
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js?v=32').then(reg=>reg.update()).catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=33').then(reg=>reg.update()).catch(()=>{});
 }
 migratePresentationV4();migrateBooksV5();migrateV6();seedBalbordo29();seedBooksInitialV61();seedBooksV62();seedBookPuntoAranaV63();seedProjectVideoV71();initNav();render();initSupabaseShared();
 
