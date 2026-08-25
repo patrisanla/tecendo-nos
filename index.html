@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="gl">
 <head>
-  <meta name="app-version" content="V36" />
+  <meta name="app-version" content="V40" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tecendo Nós · App do PDI</title>
@@ -2475,6 +2475,83 @@ img,video,iframe{max-width:100%}
   }
 }
 
+
+/* V38 · vídeo inicial local, responsive e sen interface de Google Drive */
+.projectVideoStage{
+  display:block!important;
+  position:relative!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  height:auto!important;
+  aspect-ratio:auto!important;
+  margin:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+  border:0!important;
+  border-radius:14px!important;
+  background:#000!important;
+  line-height:0!important;
+}
+
+.projectVideoStage .projectNativeVideo{
+  position:static!important;
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto!important;
+  aspect-ratio:16/9!important;
+  object-fit:contain!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:14px!important;
+  background:#000!important;
+  box-sizing:border-box!important;
+}
+
+.projectVideoActions{
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin:10px 0 0;
+}
+
+.driveVideoBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:9px 18px;
+  border:2px dashed rgba(95,72,35,.35);
+  border-radius:12px;
+  background:#f7ebc9;
+  color:#174b55;
+  font-weight:900;
+  font-size:13px;
+  text-decoration:none;
+  box-shadow:0 3px 8px rgba(62,43,20,.10);
+}
+.driveVideoBtn:before{
+  content:"↗";
+  margin-right:7px;
+  font-size:15px;
+}
+.driveVideoBtn:hover{transform:translateY(-1px)}
+
+@media(max-width:780px){
+  .projectVideoStage .projectNativeVideo{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:16/9!important;
+    border-radius:11px!important;
+  }
+  .driveVideoBtn{
+    padding:8px 15px;
+    font-size:12px;
+  }
+}
+
 </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -2550,6 +2627,9 @@ img,video,iframe{max-width:100%}
     <button class="pill-btn adminOnlyBtn" onclick="editProjectVideo()">Editar vídeo</button>
   </div>
   <div class="projectVideoStage" id="projectVideoStage"></div>
+<div class="projectVideoActions">
+  <a class="driveVideoBtn" href="https://drive.google.com/file/d/1fM-nwlEo3Xc1gno3behB8UCcSI7zpU_8/view?usp=drive_link" target="_blank" rel="noopener">Ver en GDrive</a>
+</div>
 </div>
 <div class="grid two"><div class="card"><h3>Que é?</h3><p>Un Proxecto Documental Integrado de centro: biblioteca, aulas, áreas e comunidade traballan arredor dun contexto común de investigación, creación e comunicación.</p></div><div class="card"><h3>Tres Nós</h3><p><b>Territorio:</b> San Pedro de Nós e Finca Tenreiro.<br><b>Lazos:</b> memoria, oficios, xogos, tempos.<br><b>Comunidade:</b> aprender, coidar e devolver.</p></div><div class="card"><h3>Neira Vilas</h3><p>Fío literario transversal: infancia, escola, lingua, cartas, xogos, familia, comunidade e memoria.</p><div class="tagrow"><span class="tag">lingua</span><span class="tag blue">infancia</span><span class="tag rose">memoria</span></div></div><div class="card"><h3>Metodoloxía</h3><p>Observamos → Preguntamos → Investigamos → Creamos → Compartimos → Reflexionamos.</p></div></div><div class="panel"><img class="wideImage" src="assets/pdi-tecendo-nos.png" alt="Infografía Tecendo Nós"></div>
 
@@ -2902,14 +2982,10 @@ function seedProjectVideoV71(){
 
 function renderProjectVideo(){
   const el=document.getElementById('projectVideoStage'); if(!el) return;
-  const url=(data.content?.pdi?.videoUrl||'').trim();
-  if(!url){
-    el.innerHTML=`<div class="projectVideoEmpty"><span class="vIcon">🎬</span><strong>Vídeo inicial pendente</strong><br><small>Engadirase aquí cando estea listo.</small></div>`;
-    return;
-  }
-  const src=normalizeVideoEmbed(url);
-  if(/\.(mp4|webm|mov)(\?|$)/i.test(src)) el.innerHTML=`<video controls playsinline src="${esc(src)}"></video>`;
-  else el.innerHTML=`<iframe src="${esc(src)}" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+  el.innerHTML=`<video class="projectNativeVideo" controls playsinline preload="metadata">
+    <source src="assets/video_inicial_tecendo_nos.mp4" type="video/mp4">
+    O teu navegador non pode reproducir este vídeo.
+  </video>`;
 }
 function editProjectVideo(){
   const current=data.content?.pdi?.videoUrl||'';
@@ -3398,7 +3474,7 @@ if(introShell) window.addEventListener('resize',updateIntro);
 document.body.classList.remove('intro-open');
 
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js?v=36').then(reg=>reg.update()).catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=40').then(reg=>reg.update()).catch(()=>{});
 }
 migratePresentationV4();migrateBooksV5();migrateV6();seedBalbordo29();seedBooksInitialV61();seedBooksV62();seedBookPuntoAranaV63();seedProjectVideoV71();initNav();render();initSupabaseShared();
 
