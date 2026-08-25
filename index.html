@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="gl">
 <head>
-  <meta name="app-version" content="V34" />
+  <meta name="app-version" content="V35" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tecendo Nós · App do PDI</title>
@@ -2322,6 +2322,78 @@ img,video,iframe{max-width:100%}
   .projectVideoBlock{padding:7px!important}
 }
 
+
+/* V35 · vídeo axustado á caixa de reprodución */
+.projectVideoBlock{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  box-sizing:border-box!important;
+}
+
+.projectVideoStage{
+  position:relative!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  aspect-ratio:16/9!important;
+  height:auto!important;
+  min-height:0!important;
+  padding:0!important;
+  margin:0!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+  border-radius:14px!important;
+  background:#111!important;
+  border:0!important;
+  outline:0!important;
+}
+
+.projectVideoStage iframe,
+.projectVideoStage video,
+.projectVideoStage embed,
+.projectVideoStage object{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  box-sizing:border-box!important;
+}
+
+.projectVideoStage video{
+  object-fit:contain!important;
+  background:#000!important;
+}
+
+.projectVideoStage iframe{
+  overflow:hidden!important;
+}
+
+/* Evita que estilos vellos impoñan min-height ou outro aspect-ratio */
+@media(max-width:780px){
+  .projectVideoBlock{
+    padding:10px!important;
+  }
+  .projectVideoStage{
+    width:100%!important;
+    min-height:0!important;
+    aspect-ratio:16/9!important;
+    border-radius:12px!important;
+  }
+}
+
+@media(max-width:430px){
+  .projectVideoBlock{padding:7px!important}
+  .projectVideoStage{border-radius:10px!important}
+}
+
 </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -2392,7 +2464,7 @@ img,video,iframe{max-width:100%}
     <div>
       <span class="eyebrow">Vídeo inicial</span>
       <h3>Un primeiro fío para entrar no proxecto</h3>
-      <p>Este espazo quedará preparado para incorporar o vídeo de presentación e motivación.</p>
+      
     </div>
     <button class="pill-btn adminOnlyBtn" onclick="editProjectVideo()">Editar vídeo</button>
   </div>
@@ -3245,7 +3317,7 @@ if(introShell) window.addEventListener('resize',updateIntro);
 document.body.classList.remove('intro-open');
 
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js?v=34').then(reg=>reg.update()).catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=35').then(reg=>reg.update()).catch(()=>{});
 }
 migratePresentationV4();migrateBooksV5();migrateV6();seedBalbordo29();seedBooksInitialV61();seedBooksV62();seedBookPuntoAranaV63();seedProjectVideoV71();initNav();render();initSupabaseShared();
 

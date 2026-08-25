@@ -1,4 +1,4 @@
-const CACHE_NAME='tecendo-nos-v34';
+const CACHE_NAME='tecendo-nos-v35';
 
 self.addEventListener('install',event=>{
   self.skipWaiting();
