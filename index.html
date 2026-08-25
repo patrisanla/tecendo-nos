@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="gl">
 <head>
-  <meta name="app-version" content="V30" />
+  <meta name="app-version" content="V32" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tecendo Nós · App do PDI</title>
@@ -1859,6 +1859,307 @@ img,video,iframe{max-width:100%}
   .side.mobileOpen .nav button .menuPng{max-height:68px!important}
 }
 
+
+/* ==========================================================
+   V31 · MENÚ MÓBIL SIMPLE E VISIBLE
+   Un botón "Menú" e despregable dunha soa columna.
+   Altura máxima: media pantalla.
+   ========================================================== */
+
+@media(max-width:900px){
+  .mobileMenuBtn{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    min-height:42px!important;
+    padding:8px 14px!important;
+    border-radius:11px!important;
+    font-size:14px!important;
+    font-weight:900!important;
+    background:#f2dfb5!important;
+    color:#643078!important;
+    border:2px dashed rgba(100,48,120,.35)!important;
+    box-shadow:0 3px 8px rgba(64,43,18,.10)!important;
+  }
+
+  .side.mobileOpen{
+    position:fixed!important;
+    top:74px!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
+
+    width:min(360px,calc(100vw - 28px))!important;
+    height:auto!important;
+    max-height:50vh!important;
+
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+
+    padding:12px 10px!important;
+    margin:0!important;
+    box-sizing:border-box!important;
+
+    border-radius:18px!important;
+    border:1px solid rgba(92,66,31,.18)!important;
+
+    background:
+      repeating-linear-gradient(0deg,rgba(83,60,28,.03) 0 1px,transparent 1px 4px),
+      rgba(246,232,196,.94)!important;
+
+    -webkit-backdrop-filter:blur(12px)!important;
+    backdrop-filter:blur(12px)!important;
+
+    box-shadow:0 16px 38px rgba(59,39,15,.24)!important;
+    z-index:9999!important;
+  }
+
+  .side.mobileOpen:before{
+    content:"Escolle un apartado"!important;
+    display:block!important;
+    position:static!important;
+    width:auto!important;
+    height:auto!important;
+    margin:0 0 7px!important;
+    padding:0!important;
+    text-align:center!important;
+    border:0!important;
+    color:#6b4c70!important;
+    font-size:11px!important;
+    font-weight:900!important;
+    letter-spacing:.03em!important;
+  }
+
+  .side.mobileOpen:after{
+    content:""!important;
+    position:absolute!important;
+    inset:5px!important;
+    border:1.5px dashed rgba(101,72,31,.28)!important;
+    border-radius:13px!important;
+    pointer-events:none!important;
+  }
+
+  /* Unha única columna */
+  .side.mobileOpen .nav{
+    position:relative!important;
+    z-index:2!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+
+    gap:5px!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  .side.mobileOpen .nav button,
+  .side.mobileOpen #nav-pdi,
+  .side.mobileOpen #nav-recursos,
+  .side.mobileOpen #nav-libros,
+  .side.mobileOpen #nav-ideas,
+  .side.mobileOpen #nav-memoria,
+  .side.mobileOpen #nav-calendario{
+    position:relative!important;
+    display:block!important;
+
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+
+    margin:0!important;
+    padding:0!important;
+
+    aspect-ratio:auto!important;
+
+    background:none!important;
+    border:0!important;
+    box-shadow:none!important;
+    overflow:visible!important;
+    transform:none!important;
+  }
+
+  .side.mobileOpen .nav button .menuPng{
+    position:static!important;
+    display:block!important;
+
+    width:auto!important;
+    height:auto!important;
+    max-width:92%!important;
+    max-height:60px!important;
+
+    margin:0 auto!important;
+    padding:0!important;
+
+    object-fit:contain!important;
+    object-position:center!important;
+
+    filter:drop-shadow(0 2px 3px rgba(65,43,17,.12))!important;
+  }
+
+  .side.mobileOpen .nav button.active .menuPng{
+    filter:drop-shadow(0 3px 4px rgba(65,43,17,.22)) brightness(1.035)!important;
+  }
+
+  /* Nada máis ocupa espazo no panel */
+  .side.mobileOpen .brand,
+  .side.mobileOpen .quick,
+  .side.mobileOpen .adminBadge,
+  .side.mobileOpen .sideMotto{
+    display:none!important;
+  }
+}
+
+@media(max-width:520px){
+  .side.mobileOpen{
+    top:92px!important;
+    width:min(330px,calc(100vw - 22px))!important;
+    max-height:50vh!important;
+    padding:10px 8px!important;
+  }
+
+  .side.mobileOpen .nav{
+    gap:3px!important;
+  }
+
+  .side.mobileOpen .nav button .menuPng{
+    max-width:90%!important;
+    max-height:53px!important;
+  }
+}
+
+@media(max-width:380px){
+  .side.mobileOpen{
+    width:calc(100vw - 18px)!important;
+  }
+
+  .side.mobileOpen .nav button .menuPng{
+    max-height:48px!important;
+  }
+}
+
+
+/* ==========================================================
+   V32 · MENÚ MÓBIL REALMENTE NOVO
+   Botón Menú + panel dunha columna, máximo media pantalla.
+   ========================================================== */
+.mobileMenuPanel{display:none}
+
+@media(max-width:900px){
+  /* A sidebar antiga nunca participa no menú móbil */
+  .side{display:none!important}
+  .side.mobileOpen{display:none!important}
+
+  .mobileMenuBtn{
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    min-height:42px!important;
+    padding:8px 14px!important;
+    border-radius:11px!important;
+    font-size:14px!important;
+    font-weight:900!important;
+    background:#f2dfb5!important;
+    color:#643078!important;
+    border:2px dashed rgba(100,48,120,.35)!important;
+    box-shadow:0 3px 8px rgba(64,43,18,.10)!important;
+    position:relative!important;
+    z-index:10002!important;
+  }
+
+  .mobileMenuPanel{
+    display:none;
+    position:fixed;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(340px,calc(100vw - 24px));
+    height:auto;
+    max-height:50vh;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:10px 10px 12px;
+    box-sizing:border-box;
+    z-index:10001;
+    border-radius:18px;
+    border:1px solid rgba(94,67,31,.18);
+    background:
+      repeating-linear-gradient(0deg,rgba(83,60,28,.03) 0 1px,transparent 1px 4px),
+      rgba(246,232,196,.96);
+    -webkit-backdrop-filter:blur(12px);
+    backdrop-filter:blur(12px);
+    box-shadow:0 16px 38px rgba(59,39,15,.24);
+  }
+  .mobileMenuPanel.open{display:block!important}
+  .mobileMenuPanel:after{
+    content:"";
+    position:absolute;
+    inset:5px;
+    border:1.5px dashed rgba(101,72,31,.28);
+    border-radius:13px;
+    pointer-events:none;
+  }
+  .mobileMenuTitle{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    color:#6b4c70;
+    font-size:11px;
+    font-weight:900;
+    margin:0 0 6px;
+    letter-spacing:.02em;
+  }
+  .mobileMenuTitle span{color:#643078}
+
+  .mobileMenuList{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+    width:100%;
+    margin:0;
+    padding:0;
+  }
+  .mobileMenuList button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:0;
+    height:auto;
+    margin:0;
+    padding:0;
+    border:0;
+    background:transparent;
+    box-shadow:none;
+    cursor:pointer;
+  }
+  .mobileMenuList img{
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:94%;
+    max-height:52px;
+    object-fit:contain;
+    object-position:center;
+    filter:drop-shadow(0 2px 3px rgba(65,43,17,.12));
+  }
+  .mobileMenuList button:active img{
+    transform:scale(.98);
+  }
+}
+
+@media(max-width:420px){
+  .mobileMenuPanel{
+    width:min(320px,calc(100vw - 18px));
+    padding:8px 8px 10px;
+  }
+  .mobileMenuList img{max-height:48px}
+}
+
 </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -1882,7 +2183,19 @@ img,video,iframe{max-width:100%}
   <div class="sceneYarn"><span></span></div>
 </div>
 
-    <div class="topbar"><div class="search"><input id="search" placeholder="Buscar por curso, área, Neira Vilas, memoria, música, mapas..."></div><button id="mobileMenuBtn" class="mobileMenuBtn" type="button" aria-expanded="false" aria-controls="nav" onclick="toggleMobileMenu()">☰ Menú</button><span id="syncStatus" class="syncStatus">Conectando…</span><button class="adminBtn pageEdit" onclick="openPageEditor()">Editar páxina</button><button class="adminBtn" onclick="toggleAdmin()" id="adminBtn">Administración</button></div>
+    <div class="topbar"><div class="search"><input id="search" placeholder="Buscar por curso, área, Neira Vilas, memoria, música, mapas..."></div>
+<div id="mobileMenuPanel" class="mobileMenuPanel" aria-hidden="true">
+  <div class="mobileMenuTitle">Escolle un apartado <span>♥</span></div>
+  <nav class="mobileMenuList" aria-label="Menú principal">
+    <button type="button" data-section="pdi"><img src="assets/ui_bordado/boton_o_proxecto.png" alt="O proxecto"></button>
+    <button type="button" data-section="recursos"><img src="assets/ui_bordado/boton_materiais.png" alt="Materiais"></button>
+    <button type="button" data-section="libros"><img src="assets/ui_bordado/boton_libros.png" alt="Libros"></button>
+    <button type="button" data-section="ideas"><img src="assets/ui_bordado/boton_ideas.png" alt="Ideas"></button>
+    <button type="button" data-section="memoria"><img src="assets/ui_bordado/boton_memoria_viva.png" alt="Memoria viva"></button>
+    <button type="button" data-section="calendario"><img src="assets/ui_bordado/boton_calendario.png" alt="Calendario"></button>
+  </nav>
+</div>
+<button id="mobileMenuBtn" class="mobileMenuBtn" type="button" aria-expanded="false" aria-controls="nav" onclick="toggleMobileMenu()">☰ Menú</button><span id="syncStatus" class="syncStatus">Conectando…</span><button class="adminBtn pageEdit" onclick="openPageEditor()">Editar páxina</button><button class="adminBtn" onclick="toggleAdmin()" id="adminBtn">Administración</button></div>
 
     <section class="section" id="inicio"><div class="sectionEmbroidery teal"><span>✿</span><i></i><b>♥</b><i></i><span>✿</span></div>
       <div class="hero"><div><h2>Tecendo Nós</h2><p>Un espazo común para organizar, inspirar e documentar o PDI 2026-2027 desde o territorio, a memoria, a literatura e a comunidade.</p><div class="actions"><button class="primary" onclick="show('pdi')">Coñecer o PDI</button><button class="secondary" onclick="openForm('idea')">Teño unha idea</button><button class="secondary" onclick="openForm('memoria')">Documentar actividade</button></div></div><img src="assets/logo-tecendo-nos.png" alt="Logo Tecendo Nós"></div>
@@ -2770,7 +3083,7 @@ if(introShell) window.addEventListener('resize',updateIntro);
 document.body.classList.remove('intro-open');
 
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('sw.js?v=30').then(reg=>reg.update()).catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=32').then(reg=>reg.update()).catch(()=>{});
 }
 migratePresentationV4();migrateBooksV5();migrateV6();seedBalbordo29();seedBooksInitialV61();seedBooksV62();seedBookPuntoAranaV63();seedProjectVideoV71();initNav();render();initSupabaseShared();
 
@@ -2833,6 +3146,51 @@ document.addEventListener('click',function(e){
   const navButton=e.target.closest('.nav button');
   if(navButton) setTimeout(()=>toggleMobileMenu(false),50);
 });
+
+
+/* V32 · menú móbil independente da sidebar */
+(function(){
+  const btn=document.getElementById('mobileMenuBtn');
+  const panel=document.getElementById('mobileMenuPanel');
+  if(!btn||!panel) return;
+
+  function positionPanel(){
+    const r=btn.getBoundingClientRect();
+    const top=Math.max(8,Math.min(window.innerHeight-120,r.bottom+8));
+    panel.style.top=top+'px';
+    panel.style.maxHeight=Math.min(window.innerHeight*0.5,window.innerHeight-top-12)+'px';
+  }
+
+  window.toggleMobileMenu=function(force){
+    const open=typeof force==='boolean'?force:!panel.classList.contains('open');
+    panel.classList.toggle('open',open);
+    panel.setAttribute('aria-hidden',open?'false':'true');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    btn.textContent=open?'✕ Pechar':'☰ Menú';
+    if(open) positionPanel();
+  };
+
+  panel.querySelectorAll('button[data-section]').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const id=b.dataset.section;
+      if(typeof show==='function') show(id);
+      window.toggleMobileMenu(false);
+    });
+  });
+
+  document.addEventListener('click',e=>{
+    if(!panel.classList.contains('open')) return;
+    if(panel.contains(e.target)||btn.contains(e.target)) return;
+    window.toggleMobileMenu(false);
+  });
+
+  window.addEventListener('resize',()=>{
+    if(panel.classList.contains('open')) positionPanel();
+  });
+  window.addEventListener('scroll',()=>{
+    if(panel.classList.contains('open')) positionPanel();
+  },{passive:true});
+})();
 
 </script>
 </div></body>
